@@ -1,0 +1,46 @@
+# Core LangChain and LangGraph packages
+langchain
+langchain-core
+langgraph
+langgraph-checkpoint
+langchain-openai
+
+# Web crawling and search tools
+langchain-community
+tavily-python
+beautifulsoup4
+selenium
+playwright
+requests
+aiohttp
+
+# Data processing and validation
+pydantic
+marshmallow
+lxml
+python-dateutil
+
+# API integrations
+openai
+tiktoken
+
+# Utilities
+python-dotenv
+tqdm
+tenacity
+nest-asyncio
+
+# Data storage (optional)
+chromadb
+faiss-cpu
+redis
+
+# Document processing
+unstructured
+pdf2image
+pytesseract
+pillow
+
+# Visualization (optional)
+pyvis
+matplotlib
