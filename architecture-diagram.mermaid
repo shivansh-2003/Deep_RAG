@@ -1,0 +1,39 @@
+flowchart TB
+    subgraph "User Interface"
+        Query[User Query]
+    end
+
+    subgraph "Agent Workflow"
+        Planner[Planner Agent]
+        Search[Search Agent]
+        Extraction[Content Extraction Agent]
+        Analysis[Analysis Agent]
+        Drafting[Drafting Agent]
+        FactCheck[Fact-Checking Agent]
+        Finalizing[Finalizing Agent]
+    end
+
+    subgraph "External Services"
+        Tavily[Tavily API]
+        Perplexity[Perplexity API]
+        Claude[Claude 3.7 Sonnet]
+        GPT[GPT-4o]
+    end
+
+    Query --> Planner
+    Planner --> Search
+    Search --> Extraction
+    Search <-.-> Tavily
+    Search <-.-> Perplexity
+    Extraction --> Analysis
+    Analysis -->|needs more research| Search
+    Analysis -->|proceed to draft| Drafting
+    Drafting --> FactCheck
+    FactCheck --> Finalizing
+    Finalizing --> Result[Final Answer]
+
+    Planner <-.-> Claude
+    Analysis <-.-> Claude
+    Drafting <-.-> Claude
+    FactCheck <-.-> Claude
+    Finalizing <-.-> Claude

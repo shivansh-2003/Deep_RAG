@@ -1,0 +1,14 @@
+stateDiagram-v2
+    [*] --> Planner
+    Planner --> Search
+    Search --> ContentExtraction
+    ContentExtraction --> Analysis
+    
+    state if_state <<choice>>
+    Analysis --> if_state
+    if_state --> Search: needs_more_research
+    if_state --> Drafting: proceed_to_draft
+    
+    Drafting --> FactChecking
+    FactChecking --> Finalizing
+    Finalizing --> [*]
