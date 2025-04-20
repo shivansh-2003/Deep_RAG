@@ -44,3 +44,9 @@ pillow
 # Visualization (optional)
 pyvis
 matplotlib
+readability-lxml
+
+anthropic
+langchain_perplexity
+langchain_anthropic
+lxml_html_clean
